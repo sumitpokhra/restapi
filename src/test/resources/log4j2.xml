@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+	<Properties>
+		<Property name="logPath">./logs</Property>
+	</Properties>
+	<Appenders>
+		<RollingFile name="MainLogFile"
+			filename="${logPath}/restapi-${date:dd-MM-yyyy'_'HH-mm-ss}.log"
+			filePattern="${logPath}/restapi-%d{yyyy-MM-dd}-%i.log">
+			<PatternLayout
+				pattern="%-5p [%d{ISO8601}][%t] [%X{jmstype}:%X{id}] %m%n" />
+			<Policies>
+				<TimeBasedTriggeringPolicy />
+				<SizeBasedTriggeringPolicy size="50 MB" />
+			</Policies>
+			<DefaultRolloverStrategy max="30"
+				fileIndex="min" />
+		</RollingFile>
+
+		<Console name="Console" target="SYSTEM_OUT">
+			<PatternLayout
+				pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
+		</Console>
+
+	</Appenders>
+	<Loggers>
+		<Logger name="com.restapiframework" level="debug" additivity="false">
+			<AppenderRef ref="Console" />
+			<AppenderRef ref="MainLogFile" />
+		</Logger>
+		<Root level="debug">
+			<AppenderRef ref="MainLogFile" />
+			<AppenderRef ref="Console" />
+		</Root>
+	</Loggers>
+</Configuration>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+	<test name="BHE and HOLD">
+	 <!-- <packages>
+            <package name="aero.sita.bagmanager.testcases.departureflights"/>
+        </packages -->
+		 <classes>
+			<!-- <class name="aero.sita.bagmanager.testcases.bheandhold.ManageContainerSheetAndBHE"></class> -->
+			 <!-- <class name="aero.sita.bagmanager.testcases.bheandhold.VerifyBheBagAndBheContentInfo"></class> -->
+			 <!-- <class name="aero.sita.bagmanager.testcases.bheandhold.VerifyHoldBagAndHoldContent"></class> --> 
+			 <class name="aero.sita.bagmanager.testcases.bheandhold.VerifyMergeBHEAndHold"></class> 
+		</classes> 
+	</test>
+	<!-- test name="Test2"> <classes> <class name="aero.sita.bagmanager.testcases.VerifyULDHoldAndBagsInfoInManifestScreenTest"></class> 
+		</classes> </test --><!-- Test -->
+</suite> <!-- Suite -->
